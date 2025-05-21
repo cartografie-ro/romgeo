@@ -1,3 +1,22 @@
+[project]
+name = "romgeo"
+version = "0.1.4"
+dependencies = [
+  "numba<=0.58.1",
+  "numpy<=1.24.4",
+  "pyproj<=3.6.1"
+]
+authors = [
+  { name="Mihail-Alexandru CRETU", email="romgeo@cartografie.ro" },
+]
+description = "RomGEO Geospatial Utilities for Romania"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
