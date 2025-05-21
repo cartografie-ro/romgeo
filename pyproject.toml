@@ -1,8 +1,3 @@
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
-
-[project.urls]
-Homepage = "https://github.com/cartografie-ro/romgeo"
-Source = "https://github.com/cartografie-ro/romgeo/tree/main/src/romgeo"
-Issues = "https://github.com/cartografie-ro/romgeo/issues"
