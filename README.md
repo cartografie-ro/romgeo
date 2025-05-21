@@ -44,8 +44,8 @@ RomGEO is delivered as a set of python modules and as a compiled Windows x64 bin
 
   
 ## Command line interface and executable scripts
-* *the romgeo_console is still under development, est. Q4 2024*
-* *the romgeo_gui is still under development, est. Q4 2024*
+* *the romgeo_console is still under development, est. Q4 2025*
+* *the romgeo_gui is still under development, est. Q4 2025*
   
 # License and copyright
 
