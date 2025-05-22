@@ -15,14 +15,22 @@ jobs:
         python-version: '3.10'
 
     - name: Install build tools
-      run: |
-        pip install build twine
+      run: pip install build twine
 
-    - name: Build package
-      run: python -m build
+    - name: Get package version
+      id: get_version
+      run: |
+        VERSION=$(python setup.py --version)
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+    - name: Build package into versioned dist folder
+      run: |
+        mkdir -p dist/${{ steps.get_version.outputs.version }}
+        python -m build --outdir dist/${{ steps.get_version.outputs.version }}
 
     - name: Publish to PyPI
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-      run: twine upload dist/*
+      run: |
+        twine upload dist/${{ steps.get_version.outputs.version }}/*
