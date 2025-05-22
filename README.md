@@ -17,6 +17,27 @@ RomGEO is an open source software toolbox for doing geodetic datum transformatio
 foo@bar:~$ pip install romgeo
 ```
 
+> **Warning:** The `romgeo` package does **not** include a built-in grid file.
+>
+> To use coordinate transformations, you must download the latest `.spg` file from:
+>
+> [https://github.com/cartografie-ro/romgeo-grid/tree/main/grids/latest/](https://github.com/cartografie-ro/romgeo-grid/tree/main/grids/latest/)
+>
+> Then either:
+>
+> - Specify the `.spg` file when initializing the transform:
+>   ```python
+>   t = romgeo.transformations.Transform(filename='<path to .spg>')
+>   ```
+>
+> - **OR** copy the `.spg` file to:
+>   ```
+>   <python install dir>/lib/site-packages/romgeo/data/
+>   ```
+>
+> Without the grid file, transformations will fail.
+
+
 ### Optional packages can be installed
 RomGEO has extra packages:
 - romgeo_benchmark, command line and GUI benchmark utility
